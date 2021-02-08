@@ -43,6 +43,7 @@ class Train
     if(station_index + 1) != route.show_route.size.size
       @current_station = route.show_route[station_index + 1]
     else
+      @current_station == nil
       puts "You have arrived at the terminal station"
     end  
   end
@@ -52,6 +53,7 @@ class Train
     if (station_index - 1) >= 0
       @current_station = route.show_route[station_index - 1]
     else
+       @current_station == nil
       puts "You are at the starting station!"
     end
   end      
