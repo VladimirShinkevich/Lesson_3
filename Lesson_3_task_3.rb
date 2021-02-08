@@ -37,24 +37,31 @@ class Train
     @route = route
     @current_station = route.starting_station
   end
-
-  def train_moving_next
-    station_index = route.show_route.index(current_station)
-    if (station_index + 1) != route.show_route.size
-      current_station = route.show_route[station_index + 1]
+  
+  def next_station
+    station_index = route.show_route.index(@current_station) 
+    if(station_index + 1) != route.show_route.size.size
+      @current_station = route.show_route[station_index + 1]
     else
       puts "You have arrived at the terminal station"
-    end
+    end  
   end
-
-
-  def train_moving_prev
-    station_index = route.show_route.index(current_station)
+  
+  def prev_station
+    station_index = route.show_route.index(@current_station)
     if (station_index - 1) >= 0
-      current_station = route.show_route[station_index - 1]
+      @current_station = route.show_route[station_index - 1]
     else
       puts "You are at the starting station!"
     end
+  end      
+
+  def train_moving_next
+    next_station 
+  end
+
+  def train_moving_prev
+    prev_station
   end
 
 end
