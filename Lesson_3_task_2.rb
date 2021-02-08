@@ -1,5 +1,5 @@
 class Route
-  attr_accessor :starting_station, :end_station, :intermediate_station
+  attr_accessor :starting_station, :end_station, :intermediate_stations
 
   def initialize(starting_station, end_station)
     @starting_station = starting_station
@@ -16,6 +16,6 @@ class Route
   end
 
   def show_route
-   [@starting_station + *@intermediate_station + @end_station]
+   [@starting_station + @intermediate_stations + @end_station]
   end
 end
