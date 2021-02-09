@@ -16,6 +16,6 @@ class Route
   end
 
   def show_route
-   [@starting_station + @intermediate_stations + @end_station]
+   [@starting_station, *@intermediate_stations, @end_station] # переделал
   end
 end
