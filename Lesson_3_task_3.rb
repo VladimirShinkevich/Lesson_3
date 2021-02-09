@@ -1,5 +1,5 @@
 class Train
-  attr_reader :size, :speed, :current_station, :route
+  attr_reader :vagons, :speed, :current_station, :route, :number, :type
 
   def initialize(number, type, vagons)
     @number = number
@@ -19,18 +19,17 @@ class Train
     if @speed == 0
       @vagons += 1
     else
-      puts "You can't do this, your speed = #{@speed}!!!"
+      puts "You can't do this, you don't stop the train!!!"
     end
   end
 
   def delete_vagon
-    until vagons == 0
+    return if vagons ==  0
       if @speed == 0
         @vagons -= 1
       else
-        puts "You can't do this, your speed = #{@speed}!!!"
+        puts "You can't do this, you don't stop the train!!!"
       end
-    end
   end
 
   def train_route(route)
