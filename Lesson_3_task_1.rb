@@ -15,10 +15,10 @@ class Station
   end
 
   def show_cargo_trains
-    @trains.select { |train| train.type == :cargo }
+    @trains.select { |train| train == :cargo }
   end
 
   def show_coach_trains
-    @trains.select { |train| train.type == :coach }
+    @trains.select { |train| train == :coach }
   end
 end
