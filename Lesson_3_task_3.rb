@@ -44,7 +44,7 @@ class Train
   end
   
   def prev_station
-    return if @current_station >=0
+    return if @current_station >= route.starting_station
     station_index = route.show_route.index(@current_station)
     @current_station = route.show_route[station_index - 1]
   end      
